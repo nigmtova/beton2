@@ -18,6 +18,7 @@
     align-items: center;
     background: #EAEAEA;
     flex-wrap: wrap;
+    z-index: 1000;
 }
 
 .nav-2 {
@@ -153,10 +154,10 @@
     }
     .nav-links {
         width: 300px;
-        height: 400px;
+        height: 250px;
         position: absolute;
         right: -600px;
-        background: #EAEAEA;
+        background: #fff;
         transition: .5s;
     }
 
@@ -166,8 +167,12 @@
         width: 100% !important;
         height: 30px;
         border-radius: 5px;
-        background: #fff;
+        background: #eee;
         transition: .3s;
+    }
+
+    .close:hover {
+        transform: rotate(180deg);
     }
     
     nav a:hover {

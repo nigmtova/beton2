@@ -8,6 +8,7 @@ import {BsFillTelephoneFill} from 'react-icons/bs'
 import {BsFillPeopleFill} from 'react-icons/bs'
 import {AiOutlineMenu} from 'react-icons/ai'
 import {FaRegHandshake} from 'react-icons/fa'
+import {AiOutlineClose} from 'react-icons/ai'
 import logo1 from '../img/logo.jpeg'
 import logo2 from '../img/phone.jpeg'
 import {MdOutlineManageAccounts} from 'react-icons/md'
@@ -20,6 +21,10 @@ function bosh() {
 function menu() {
   document.querySelector('.nav-links').style = 'position: absolute; right: 0; top: 0;'
   document.querySelector('nav a').style = 'display:block;'
+}
+
+function close() {
+  document.querySelector('.nav-links').style = 'position: absolute; right: -700px;'
 }
 
 
@@ -38,6 +43,7 @@ export default function Navbar() {
           <img src={logo1} onClick={()=> bosh()} className='logo1' />
         </div>
         <div className="nav-links">
+          <AiOutlineClose onClick={()=> close()} className='close'/>
           <nav>
             <a href="#" ><HiOutlineNewspaper className='ico'/>Новости</a>
             <a href="#" ><BsFillCalculatorFill className='ic'/>Калькуляторы</a>
