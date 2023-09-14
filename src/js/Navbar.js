@@ -43,7 +43,7 @@ export default function Navbar() {
           <img src={logo1} onClick={()=> bosh()} className='logo1' />
         </div>
         <div className="nav-links">
-          <AiOutlineClose onClick={()=> close()} className='close'/>
+          <AiOutlineClose onClick={()=> close()} className='close' id='close'/>
           <nav>
             <a href="#" ><HiOutlineNewspaper className='ico'/>Новости</a>
             <a href="#" ><BsFillCalculatorFill className='ic'/>Калькуляторы</a>

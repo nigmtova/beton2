@@ -398,6 +398,7 @@
         display: block;
         overflow-x: hidden;
         padding: 10px;
+        width: 100%;
     }
 
     .baner {
@@ -464,7 +465,16 @@
 @media(max-width: 1100px) {
     .container {
         display: block;
+        box-sizing: border-box;
         overflow-x: hidden;
+        padding: 10px;
+    }
+
+    .logo2 {
+        display: none;
+    }
+
+    .header {
         padding: 10px;
     }
 
@@ -526,6 +536,139 @@
         left: 15%;
         bottom: 33%;
         width: 298px;
+    }
+
+    .big-z {
+        display: flex;
+        align-items: center;
+    }
+    
+    .k-zakaz .k-p {
+        color: #939393;
+        font-family: Montserrat Alternates;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    
+    .k-zakaz .min-z1,
+    .min-z2, .min-z3{
+        padding-top: 1rem;
+        text-align: center;
+        margin-right: 3rem;
+        width: 200px;
+        height: 180px;
+        border-radius: 41px;
+        background: #FFF;
+    }
+    
+    .k-zakaz .min-z4 {
+        padding-top: 4rem;
+        text-align: center;
+        margin-left: 1rem;
+        width: 210px;
+        height: 200px;
+        border-radius: 41px;
+        background: linear-gradient(139deg, #000 3.64%, #757575 93.2%);
+    }
+    
+    .k-zakaz .min-z4 h1 {
+        color: #FFF;
+        text-align: center;
+        font-family: Gilroy;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    
+    .k-zakaz .min-z4 p {
+        color: #C3C3C3;
+        text-align: center;
+        font-family: Gilroy;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    
+    .z-btns {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5%;
+    }
+    
+    .z-btn1 {
+        width: 117px;
+        height: 44px;
+        border-radius: 9px;
+        border: 1px solid #E93333;
+    }
+    
+    .z-btn1 a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #E93333;
+        font-family: Gilroy;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    
+    .z-btn2 {
+        width: 117px;
+        height: 44px;
+        border-radius: 9px;
+        background:#E93333;
+        border: none;
+    }
+    
+    .b-i1 {
+        margin-right: 3px;
+    }
+    
+    .b-i2 {
+        margin-left: 4px;
+    }
+
+    .k-zakaz {
+        width: 100%;
+        height: 200px;
+        background: #F6F6F6;
+        border-radius: 41px;
+        border: none;
+        padding: 2rem;
+    }
+    
+    .z-btn2 a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-family: Gilroy;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    
+    .z-rage {
+        margin-top: 14%;
+        width: 1029px;
+        height: 10px;
+        background: #FFF;
+        box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.07);
+    }
+    
+    .k-rage {
+        width: 167px;
+        height: 10px;
+        background: #FFCB13;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius   : 10px;
     }
 }
 
@@ -618,6 +761,7 @@
         display: block;
         overflow-x: hidden;
         padding: 10px;
+        width: 100%;
     }
 
     .baner {

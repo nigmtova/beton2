@@ -146,6 +146,10 @@
     display: none;
 }
 
+#close{
+    display: none;
+}
+
 
 /* media css */
 @media(max-width:1027px) {
@@ -159,6 +163,12 @@
         right: -600px;
         background: #fff;
         transition: .5s;
+    }
+
+    .close {
+        display: flex;
+        position: absolute;
+        right: 10px;
     }
 
     nav a{
@@ -226,6 +236,10 @@
         right: 0;
         padding: 1rem;
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .close {
+        display: flex;
     }
 
     .navbar a {
