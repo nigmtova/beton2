@@ -20,6 +20,7 @@ import hand from '../img/hand.jpeg'
 import home2 from '../img/house2.jpeg'
 import {BsArrowLeft} from 'react-icons/bs'
 import {BsArrowRight} from 'react-icons/bs'
+import {MdKeyboardArrowRight} from 'react-icons/md'
 
 function cards1() {
   document.querySelector('.min-z1').style = "border: 1px solid #FFCB13"
@@ -53,6 +54,7 @@ export default function Home() {
   return (
     <div>
       <div className="container">
+        <div className="c-h">
         <div className="baner">
             <div className="b-left">
                 <div className="dum">
@@ -164,6 +166,17 @@ export default function Home() {
             </div>
           </div>
 
+            <div className="hd-info">
+              <div className="hd-left">
+              <p className='hl-p'>Немного <br />о нас</p>
+              </div>
+              <div className="t">
+                <p className='t-p'>О сервисе</p>
+                <p className="t-katap">Сервис «БЕТОН ТАКСИ» предоставляет вам ряд уникальных преимуществ. Во-первых, это обеспечение оперативной поставки бетона, позволяющей сэкономить время и деньги без отставания от графика строительства. Во-вторых, это гарантия высокого качества бетона, поскольку поставки осуществляются только с заводов проверенных поставщиков.</p>
+                <p className='hd-more'>Читать полностью <MdKeyboardArrowRight/></p>
+              </div>
+            </div>
+        </div>
         </div>
       </div>
     </div>
