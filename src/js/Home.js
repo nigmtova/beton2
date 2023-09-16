@@ -18,9 +18,17 @@ import home1 from '../img/home1.jpeg'
 import inf from '../img/infor.jpeg'
 import hand from '../img/hand.jpeg'
 import home2 from '../img/house2.jpeg'
+import fstar from '../img/fullstar.jpeg'
+import hstar from '../img/halfstar.jpeg'
+import g2 from '../img/2g.jpeg'
+import kamaz from '../img/kamaz.jpeg'
+import back from '../backgray.svg'
+import blogo3 from '../img/betonl3.jpeg'
 import {BsArrowLeft} from 'react-icons/bs'
 import {BsArrowRight} from 'react-icons/bs'
 import {MdKeyboardArrowRight} from 'react-icons/md'
+
+
 
 function cards1() {
   document.querySelector('.min-z1').style = "border: 1px solid #FFCB13"
@@ -175,8 +183,39 @@ export default function Home() {
                 <p className="t-katap">Сервис «БЕТОН ТАКСИ» предоставляет вам ряд уникальных преимуществ. Во-первых, это обеспечение оперативной поставки бетона, позволяющей сэкономить время и деньги без отставания от графика строительства. Во-вторых, это гарантия высокого качества бетона, поскольку поставки осуществляются только с заводов проверенных поставщиков.</p>
                 <p className='hd-more'>Читать полностью <MdKeyboardArrowRight/></p>
               </div>
+              {/* <img className='kamaz' src={kamaz} alt="" /> */}
+            </div>
+
+            <div className="h-part">
+              <div className="part-h1">
+                <h1 className="pa">Наши партнеры</h1>
+              </div>
+              <div className="part-info">
+                <div className="part-img">
+                  <div className="part-imges">
+                    <img className='gg2' src={g2} alt="" />
+                    <div className="star-d"><p>4,8</p><img src={hstar} alt="" /></div>
+                  </div>
+
+                  <div className="part-imges">
+                    <img className='blogo3' src={blogo3} alt="" />
+                    <div className="star-d"><p>5,0</p><img src={fstar} alt="" /></div>
+                  </div>
+                </div>
+
+                <div className="part-text">
+                    <p className='part-uzun'>С другой стороны постоянный количественный рост и сфера нашей активности требуют от нас анализа соответствующий условий активизации. Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности играет важную роль в формировании форм развития. Равным образом укрепление и развитие структуры представляет </p>
+                  <div className="s-hesht">
+                    <span className="heshteg">#245 заводов</span> <span className="heshteg">#своя аттестованная лаборатория</span> <span className="heshteg">#свой транспорт</span><br />
+                    <span className="heshteg">#свои швинги</span>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
+        </div>
+
+        <div className="h-main">
         </div>
       </div>
     </div>

@@ -31,6 +31,9 @@
 }
 
 .c-h {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
     z-index: -1;
     padding: 20px;  
@@ -152,6 +155,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    background: #F6F6F6;
 } 
 
 .zakaz {
@@ -380,13 +384,15 @@
 }
 
 .hd-info {
+    position: absolute;
+    top: 5.7rem;
     margin-top: 2rem;
     overflow: hidden;
     position: relative;
     display: flex;
     justify-content: space-between;
     width: 1000px;
-    height: 300px;
+    height: 330px;
     border-radius: 41px;
     background: #FFCB13;
 }
@@ -419,7 +425,7 @@
 }
 
 .hd-left {
-    background: #E93333;
+    background: url(../backgray.svg), lightgray 50% / cover no-repeat;
     position: absolute;
     box-shadow: 0px 4px 69px 0px rgba(0, 0, 0, 0.25);
     left: -40%;
@@ -449,9 +455,113 @@
     font-weight: 600;
     line-height: 93.4%;
     z-index: 1000;
+    mix-blend-mode: overlay;
 }
 
+.kamaz {
+    position: absolute;
+    bottom: -2rem;
+    z-index: 10000;
+    width: 250px;
+    height: 200px;
+}
 
+.h-part {
+    padding-top: 10rem;
+    width: 100%;
+    background: #FFF;
+    display: flex;
+    padding-right: 20px;
+    padding-left: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pa {
+    color: #000;
+    text-align: center;
+    font-family: Montserrat Alternates;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;    
+    margin-bottom: 3rem;
+}
+
+.part-info {
+    display: flex;
+    width: 865px;
+    height: 240px;
+    padding: 1rem 1rem;
+    border-radius: 19px;
+    margin-left: 5rem;
+    background: #FAFAFA;
+}
+
+.star-d img {
+    width: 79px;
+    height: 15px;
+}
+
+.gg2 {
+    margin-top: 2px;
+    margin-left: 1.2rem;
+    width: 54px;
+    height: 17px;
+}
+
+.blogo3 {
+    margin-top: 2px;
+    margin-left: 1.2rem;
+    width: 54px;
+    height: 17px;
+}
+
+.star-d {
+    display: flex;
+    align-items: center;
+    color: #000;
+    font-family: Gilroy;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 164%;
+}
+
+.part-imges {
+    padding: 5px 1rem;
+    width: 133px;
+    height: 56px;
+    margin: 10px;
+    border-radius: 6px;
+    margin-right: 2rem;
+    background: #FFF;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+}
+
+.part-uzun {
+    width: 603px;
+    height: 124px;
+    color: #737373;
+    font-family: Gilroy;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 164%; /* 26.24px */
+}
+
+.s-hesht {
+    margin-top: 1rem;
+}
+
+.heshteg {
+    color: #E93333;
+font-family: Gilroy;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 164%
+}
 
 
 
