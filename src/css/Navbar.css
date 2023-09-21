@@ -19,6 +19,7 @@
     background: #EAEAEA;
     flex-wrap: wrap;
     z-index: 1000;
+    overflow-y: hidden;
 }
 
 .nav-2 {
@@ -152,6 +153,13 @@
 
 
 /* media css */
+
+@media(max-width: 1250px) {
+    .logo2 {
+        position: absolute;
+        right: 0;
+    }
+}
 @media(max-width:1027px) {
     .navbar {
         width: 100%;

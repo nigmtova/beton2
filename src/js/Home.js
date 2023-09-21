@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/Home.css'
 import iphone from '../img/iphone.jpeg'
 import pizza1 from '../img/pizza1.jpeg'
@@ -21,7 +21,14 @@ import home2 from '../img/house2.jpeg'
 import fstar from '../img/fullstar.jpeg'
 import hstar from '../img/halfstar.jpeg'
 import g2 from '../img/2g.jpeg'
-import kamaz from '../img/kamaz.jpeg'
+import location from '../img/location.jpeg'
+import men from '../img/men.jpeg'
+import loc from '../img/loc.jpeg'
+import qr from '../img/qr.jpeg'
+import computer from '../img/computer.jpeg'
+import file from '../img/File.jpeg'
+import men2 from '../img/men2.jpeg'
+import iphone2 from '../img/iphone2.jpeg'
 import back from '../backgray.svg'
 import blogo3 from '../img/betonl3.jpeg'
 import {BsArrowLeft} from 'react-icons/bs'
@@ -29,9 +36,8 @@ import {BsArrowRight} from 'react-icons/bs'
 import {MdKeyboardArrowRight} from 'react-icons/md'
 
 
-
 function cards1() {
-  document.querySelector('.min-z1').style = "border: 1px solid #FFCB13"
+  document.querySelector('.min-z1').style = "border: 1px solid #ffcb13"
   document.querySelector('.min-z2').style = "border: none"
   document.querySelector('.min-z3').style = "border: none"
   document.querySelector('.min-z4').style = "border: none"
@@ -58,7 +64,22 @@ function cards4() {
   document.querySelector('.min-z1').style = "border: none"
 }
 
+// function btns1() {
+//   document.querySelector('.bir-div').style = "display: block;"
+//   document.querySelector('.btns1').style = "background: #FFCB13;"
+//   document.querySelector('.btns2').style = "background: #EBEBEB;"
+//   document.querySelector('.iki-div').style = "display: none;"
+// }
+
+// function btns2() {
+//   document.querySelector('.iki-div').style = "display: block;"
+//   document.querySelector('.btns2').style = "background: #FFCB13"
+//   document.querySelector('.btns1').style = "background: #EBEBEB"
+//   document.querySelector('.bir-div').style = "display: none;" 
+// }
+
 export default function Home() {
+  const [page,setPage] = useState(1)
   return (
     <div>
       <div className="container">
@@ -215,7 +236,130 @@ export default function Home() {
         </div>
         </div>
 
-        <div className="h-main">
+        <div className="main">
+          <div className="main-header">
+            <div className="mh-left">
+              <img src={men} alt="" />
+            </div>
+
+            <div className="mh-right">
+              <h1 className='mr-h1'>Наши приемущества</h1>
+              <div className="mh-btn">
+                <button className='btns1'>Для физических лиц</button>
+                <button className='btns2'>Для юридических лиц</button>
+              </div>
+              <div className="bir-div">
+
+                <div className="bir-divs">
+                  <div className="bir-left">
+                    <img src={location} alt="" />
+                  </div>
+                  <div className="bir-right">
+                    <p className="bir-bow">Заказ без забот.</p><br />
+                    <p className='bir-kic'>Наш сервис доставки бетона предлагает ту же простоту и удобство взаимодействия, как и заказ пиццы по телефону. Это максимально легкий и быстрый процесс.</p>
+                  </div>
+                </div>
+
+                <div className="bir-divs">
+                  <div className="bir-left">
+                    <img src={loc} alt="" />
+                  </div>
+                  <div className="bir-right">
+                    <p className="bir-bow">Полный контроль.</p><br />
+                    <p className='bir-kic'>Полностью контролируем процесс выполнения заказа по поставке бетона. Вы можете следить за поставкой в режиме онлайн, ходом работ, включая заливку, и быть уверены в том, что заказ будет выполнен в полном объеме.</p>
+                  </div>
+                </div>
+
+                <div className="bir-divs">
+                  <div className="bir-left">
+                    <img src={qr} alt="" />
+                  </div>
+                  <div className="bir-right">
+                    <p className="bir-bow">Все в одном месте.</p><br/>
+                    <p className='bir-kic'>У нас вы найдете все, что вам нужно – бетон, строительный раствор, пескобетон. Если вам требуется особый состав, то мы сделаем запрос у наших поставщиков.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mh-left">
+              <img className='men2' src={men2} alt="" />
+            </div>
+
+            <div className="iki-div">
+              <div className="bir-divs">
+                <div className="bir-left">
+                  <img src={loc} alt="" />
+                </div>
+                <div className="bir-right">
+                  <p className="bir-bow">Полный контроль.</p><br />
+                  <p className='bir-kic'>При больших объемах заливки и одновременной подаче нескольких десятков машин у вас есть возможность точно регулировать время доставки бетона. Мы предоставляем гибкость и адаптируемся к вашим требованиям.</p>
+                </div>
+              </div>
+
+              <div className="bir-divs">
+                <div className="bir-left">
+                  <img src={computer} alt="" />
+                </div>
+                <div className="bir-right">
+                  <p className="bir-bow">Удобство заказа и дозаказа.</p><br />
+                  <p className='bir-kic'>Если вам потребуется дополнительный объем бетона в ближайшее время, вы всегда можете осуществить дозаказ и быть уверены в своевременной доставке.</p>
+               </div>
+              </div>
+
+              <div className="bir-divs">
+                <div className="bir-left">
+                  <img src={file} alt="" />
+                </div>
+                <div className="bir-right">
+                  <p className="bir-bow">Полная документация.</p><br/>
+                  <p className='bir-kic'>Мы предоставляем вам онлайн доступ к паспортам качества и сертификацию на каждую партию отгруженного бетона. Вы можете быть уверены в качестве поставляемой продукции и иметь все необходимые документы для отчетности в личном кабинете. Если нужны оригиналы документов, то вы можете их заказать.</p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="main-footer">
+            <p className='mf-h1'>Чего же еще не хватает, все учтено и вы сейчас можете воспользоваться <span>лучшим сервисом в городе!</span></p>
+            <div className="mf-two">
+            <div className="mf-left">
+              <img className='ip2' src={iphone2} alt="" />
+            </div>
+
+            <div className="mf-right">
+              <div className="mf-cards">
+                <div className="mf-box"><p>Доступно 24/7</p></div>
+                <p className='mf-p'>В любое время в приложении можно сделать заказ на поставку бетона, задать вопрос консультанту, посмотреть историю заказов, оставить отзыв и многое другое.</p>
+              </div>
+
+              <div className="mf-cards">
+                <div className="mf-box1"><p>Большой выбор опций и услуг при оформлении заказа</p></div>
+                <p className='mf-p'>Возможность выбора всех необходимых параметров для заказа бетона онлайн (марка бетона, объем поставки, специальные добавки и др.).</p>
+              </div>
+
+              <div className="mf-cards">
+                <div className="mf-box"><p>Оплата через приложение</p></div>
+                <p className='mf-p'>Выбор любого удобного способа оплаты – банковская карта, наличный, безналичный расчет или по частям, а также оплата через различные платежные системы.</p>
+              </div>
+
+              <div className="mf-cards">
+                <div className="mf-box1"><p>Оплата бонусами</p></div>
+                <p className='mf-p'>На каждую отгруженную поставку начисляются бонусы, которые можно использовать для оплаты последующих заказов, получая тем самым прекрасную возможность для экономии.</p>
+              </div>
+
+              <div className="mf-cards">
+                <div className="mf-box"><p>Доступно 24/7</p></div>
+                <p className='mf-p'>В любое время в приложении можно сделать заказ на поставку бетона, задать вопрос консультанту, посмотреть историю заказов, оставить отзыв и многое другое.</p>
+              </div>
+
+              <div className="mf-cards">
+                <div className="mf-box1"><p>Большой выбор опций и услуг при оформлении заказа</p></div>
+                <p className='mf-p'>В любое время в приложении можно сделать заказ на поставку бетона, задать вопрос консультанту, посмотреть историю заказов, оставить отзыв и многое другое.</p>
+              </div>
+            
+            </div></div>
+          </div>
+
         </div>
       </div>
     </div>

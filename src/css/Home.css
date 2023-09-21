@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -13,20 +15,21 @@
     flex-wrap: wrap;
     align-items: center;
     scroll-behavior: smooth;
+    padding: 10px;
+    overflow-x:  hidden;
 }
 
 .baner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1200px;
+    width: 100%;
     height: 369px;
     border-radius: 41px;
     background: #FFCB13;
     position: relative;
     overflow: hidden;
     margin-top: 12%;
-    margin-left: 2rem;
     z-index: -1;
 }
 
@@ -173,7 +176,7 @@
 }
 
 .k-zakaz {
-    width: 1200px;
+    width: 100%;
     height: 588px;
     background: #F6F6F6;
     border-radius: 41px;
@@ -183,6 +186,7 @@
 
 .big-z {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin-top: 1rem;
 }
@@ -321,6 +325,10 @@
 .s-left {
     margin-top: 10rem;
     margin-right: 5rem;
+}
+
+.s-right {
+    margin-top: 7rem;
 }
 
 .l-cards {
@@ -495,6 +503,7 @@
     padding: 1rem 1rem;
     border-radius: 19px;
     margin-left: 5rem;
+    margin-bottom: 2rem;
     background: #FAFAFA;
 }
 
@@ -556,12 +565,221 @@
 
 .heshteg {
     color: #E93333;
-font-family: Gilroy;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: 164%
+    font-family: Gilroy;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 164%
 }
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background: #F6F6F6;
+}
+
+.main-header {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.bir-kic {
+    width: 557px;
+    color: #737373;
+    font-family: Gilroy;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 164%; /* 26.24px */
+    margin-left: 1rem;
+}
+
+.mr-h1 {
+    color: #000;
+    font-family: Montserrat Alternates;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.bir-bow {
+    margin-left: 1rem;
+    color: #000;
+    font-family: Gilroy;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.bir-divs {
+    padding: 2rem 1rem;
+    display: flex;
+    width: 700px;
+    height: 190px;
+    border-radius: 41px;
+    border: 6px solid #FFF;
+    margin-bottom: 1rem;
+}
+
+.btns1 {
+    display: inline-flex;
+    padding: 13px 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 41px;
+    background: #FFCB13;
+    border: none;
+    color: #000;
+    text-align: center;
+    font-family: Montserrat Alternates;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-right: 0.7rem;
+    cursor: pointer;
+}
+
+.btns2 {
+    display: inline-flex;
+    padding: 13px 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 41px;
+    background: #EBEBEB;
+    border: none;
+    color: #000;
+    text-align: center;
+    font-family: Montserrat Alternates;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.iki-div, .men2{
+    display: none;
+}
+
+.mf-h1 {
+    color: #000;
+    text-align: center;
+    font-family: Montserrat Alternates;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.mf-h1 span{
+    color: #FFCB13;
+    text-align: center;
+    font-family: Montserrat Alternates;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.mf-two {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.ip2 {
+    width: 250px;
+    height: 350px;
+}
+
+.main-footer {
+    margin-top: 7rem;
+}
+
+.mf-right {
+    width: 640px;
+    height: 400px;
+    padding: 0.4rem 0.5rem;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.mf-box {
+    display: inline-flex;
+    justify-content: center;
+    padding: 7px 15px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background: #FFCB13;
+    color: #000;
+    text-align: center;
+    font-family: Gilroy;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 1rem;
+}
+
+.mf-box1 {
+    display: inline-flex;
+    padding: 7px 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background: linear-gradient(99deg, #000 -0.06%, #5B5B5B 83.37%);
+    color: #FFF;
+    text-align: center;
+    font-family: Gilroy;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 1rem;
+}
+
+.mf-p {
+    color: #737373;
+    font-family: Gilroy;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 145.5%; /* 23.28px */
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
+
+
+/* media css */
+
+
+
+
+
+
 
 
 
@@ -574,6 +792,25 @@ line-height: 164%
 
 
 /* media css */
+
+@media(max-width:775px) {
+    .container {
+        overflow-x: hidden;
+    }
+
+    .baner {
+        width: 95%;
+    }
+    .big-z {
+        display: block;
+        flex-wrap: wrap;
+    }
+
+    .min-z1 {
+        width: 90%;
+        height: 30px;
+    }
+}
 
 @media(max-width: 320px) {
     .container {
@@ -646,14 +883,22 @@ line-height: 164%
 
 @media(max-width: 1100px) {
     .container {
-        display: block;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
         box-sizing: border-box;
         overflow-x: hidden;
-        padding: 10px;
     }
 
-    .logo2 {
-        display: none;
+    .min-z1 {
+        width: 100%;
+    }
+
+    .k-zakaz {
+        width: 100%;
+        height: 500px;
+        border-radius: 12px;
+        background: #F1F1F1;
     }
 
     .header {
@@ -663,7 +908,8 @@ line-height: 164%
     .baner {
         position: relative;
         width: 100%;
-        height: 530px;
+        height: 300px;
+        z-index: 1;
     }
 
     .orta h1 span{
@@ -851,177 +1097,5 @@ line-height: 164%
         background: #FFCB13;
         border-top-left-radius: 10px;
         border-bottom-left-radius   : 10px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* media css */
-
-@media(max-width: 320px) {
-    .container {
-        display: block;
-        overflow-x: hidden;
-        padding: 10px;
-    }
-
-    .baner {
-        position: relative;
-        width: 100%;
-        height: 530px;
-    }
-
-    .orta h1 span{
-        color: #E93333;
-        font-family: Montserrat Alternates;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-    }
-
-    .orta h1 span{
-        font-family: Montserrat Alternates;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-    }
-
-    .orta p {
-        color: #000;
-        font-family: Gilroy;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-    }
-
-    .progg img {
-        display: none;
-    }
-
-    .k-dum {
-        display: none;
-    }
-
-    .dale {
-        display: none;
-    }
-
-    .piz1 {
-        position: absolute;
-        right: 0;
-        top: 25%;
-        width: 207px;
-        height: 211px;
-        z-index: 1000;
-    }
-
-    .dum .ip {
-        position: absolute;
-        left: 15%;
-        bottom: 33%;
-        width: 298px;
-    }
-}
-
-@media(max-width: 1100px) {
-    .container {
-        display: block;
-        overflow-x: hidden;
-        padding: 10px;
-        width: 100%;
-    }
-
-    .baner {
-        position: relative;
-        width: 100%;
-        height: 530px;
-    }
-
-    .orta h1 span{
-        color: #E93333;
-        font-family: Montserrat Alternates;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-    }
-
-    .orta h1 span{
-        font-family: Montserrat Alternates;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-    }
-
-    .orta p {
-        color: #000;
-        font-family: Gilroy;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-    }
-
-    .progg img {
-        display: none;
-    }
-
-    .k-dum {
-        display: none;
-    }
-
-    .dale {
-        display: none;
-    }
-
-    .piz1 {
-        position: absolute;
-        right: 0;
-        top: 25%;
-        width: 207px;
-        height: 211px;
-        z-index: 1000;
-    }
-
-    .dum .ip {
-        position: absolute;
-        left: 15%;
-        bottom: 33%;
-        width: 298px;
-    }
-}
-
-@media(max-width:775px) {
-    .container {
-        overflow-x: hidden;
-    }
-
-    .baner {
-        width: 95%;
-    }
-    .big-z {
-        display: block;
-        flex-wrap: wrap;
-    }
-
-    .min-z1 {
-        width: 90%;
-        height: 30px;
     }
 }
