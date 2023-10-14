@@ -1,15 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/News.css'
 import start from '../img/zakazz.jpeg'
 import nwimg from '../img/nwimg.jpeg'
 import {HiArrowNarrowRight} from 'react-icons/hi'
 import {BsArrowUpRight} from 'react-icons/bs'
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+
+// import required modules
+import { Pagination } from 'swiper/modules';
+import { useEffect } from 'react'
+import axios from 'axios'
+
 function article() {
   window.location="/Article.js"
 }
 
+
+
 export default function News() {
+const[news1,setNews1] = useState ([])
+const[news2,setNews2] = useState ([])
+
+useEffect(() => {
+  axios.get(`https://dastafka-back.onrender.com/api/news`).then(res=>{
+    setNews1(res.data)
+    setNews2(res.data)
+  })
+}, [])
+function newsend1(id) {
+  axios.get(`https://dastafka-back.onrender.com/api/news`).then(res=>{
+    const Filter=res.data.filter(item=>item.id==id)
+    setNews2(Filter)
+  })
+}
   return (
     <div style={{overflow:"hidden", background: "#F6F6F6"}}>
       <div className="news-container">
@@ -29,6 +58,27 @@ export default function News() {
           </div> 
         </div>
 
+        <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        className="mySwiper"
+      >
+        {news1.map(item=>{
+          return(
+            <SwiperSlide><div className="swp-left-img">
+              <div className="for_swiper_img"><img src={item.image} alt="" /></div>
+              <div className="swiper-text">
+                <p className='swiper-p'>{item.title}</p>
+                <div className="swp-img-dale"><HiArrowNarrowRight className='swiper-ic'/></div>
+              </div>
+            </div></SwiperSlide>
+          )
+        })}
+        
+      </Swiper>
         <div className="news-swiper1">
           <h1 className="swiper1-h1">Смотри, что у нас нового!</h1> 
           <div className="swip1-imges">
@@ -54,38 +104,37 @@ export default function News() {
         <div className="news-main">
           <div className="nw-left">
             <div className="nw-left-card">
-              <div className="nw-left-c2">
-                <img src={nwimg} alt="" />            
+              {news2.map((item,key)=>{
+                if(key<1){
+return(
+                  <div className="nw-left-c2">
+                <img src={item.image} alt="" />            
                 <div className="nw-left-h1">
-                <p className='nwl-h1'>Новая марка<br /> бетона уже<br /> доступна</p>
-                <p className='nwl-p'>Разнообразный и богатый опыт реализация намеченных плановых заданий требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям.</p>
-            </div>
-              </div>
+                <p className='nwl-h1'>{item.title}</p>
+                <p className='nwl-p'>{item.min_description}</p>
+            </div></div>
+                )
+                }
+                
+              })}
+              
+              
 
             </div>
           </div>
           
           <div className="nw-right">
-            <div className="nw-cards">
-              <p className='nw-h01'>Новая марка бетона уже<br /> доступна на сайте</p>
+            {news1.map(item=>{
+              return(
+                <div onClick={()=>{newsend1(item.id)}} className="nw-cards">
+              <p className='nw-h01'>{item.title}</p>
               <BsArrowUpRight className='nw-cards-ic'/>
-              <p className="nw-p">Разнообразный и богатый опыт реализация намеченных плановых заданий требуют определения и уточнения систем...</p>
+              <p className="nw-p">{item.min_description}</p>
               <hr />
             </div>
-
-            <div className="nw-cards">
-              <p className='nw-h01'>Новая марка бетона уже<br /> доступна на сайте</p>
-              <BsArrowUpRight className='nw-cards-ic'/>
-              <p className="nw-p">Разнообразный и богатый опыт реализация намеченных плановых заданий требуют определения и уточнения систем...</p>
-              <hr />
-            </div>
-
-            <div className="nw-cards">
-              <p className='nw-h01'>Новая марка бетона уже<br /> доступна на сайте</p>
-              <BsArrowUpRight className='nw-cards-ic'/>
-              <p className="nw-p">Разнообразный и богатый опыт реализация намеченных плановых заданий требуют определения и уточнения систем...</p>
-              <hr />
-            </div>
+              )
+            })}
+            
           </div>
         </div>
 
