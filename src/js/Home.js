@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../css/Home.css'
 import iphone from '../img/iphone.jpeg'
 import pizza1 from '../img/pizza1.jpeg'
@@ -27,17 +27,35 @@ import loc from '../img/loc.jpeg'
 import qr from '../img/qr.jpeg'
 import computer from '../img/computer.jpeg'
 import file from '../img/File.jpeg'
+import homiy from '../img/homiy.jpeg'
 import men2 from '../img/men2.jpeg'
 import iphone2 from '../img/iphone2.jpeg'
 import back from '../backgray.svg'
 import blogo3 from '../img/betonl3.jpeg'
 import {BsArrowLeft} from 'react-icons/bs'
 import {BsArrowRight} from 'react-icons/bs'
+import {BsCheck} from 'react-icons/bs'
 import {MdKeyboardArrowRight} from 'react-icons/md'
+import {AiFillStar} from 'react-icons/ai'
+import axios from 'axios'
 
+// // Import Swiper React components
+// import { Swiper, SwiperSlide } from 'swiper/react';
+
+// // Import Swiper styles
+// import 'swiper/css';
+// import 'swiper/css/pagination';
+
+
+// // import required modules
+// import { Pagination } from 'swiper/modules';
 
 function cards1() {
   document.querySelector('.min-z1').style = "border: 1px solid #ffcb13"
+  document.querySelector('.chek').style = 'display:flex'
+  document.querySelector('.chek3').style = 'display:none'
+  document.querySelector('.chek1').style = 'display:none'
+  document.querySelector('.chek2').style = 'display:none'
   document.querySelector('.min-z2').style = "border: none"
   document.querySelector('.min-z3').style = "border: none"
   document.querySelector('.min-z4').style = "border: none"
@@ -45,6 +63,10 @@ function cards1() {
 
 function cards2() {
   document.querySelector('.min-z2').style = "border: 1px solid #FFCB13"
+  document.querySelector('.chek1').style = 'display:flex'
+  document.querySelector('.chek3').style = 'display:none'
+  document.querySelector('.chek').style = 'display:none'
+  document.querySelector('.chek2').style = 'display:none'
   document.querySelector('.min-z1').style = "border: none"
   document.querySelector('.min-z3').style = "border: none"
   document.querySelector('.min-z4').style = "border: none"
@@ -52,13 +74,21 @@ function cards2() {
 
 function cards3() {
   document.querySelector('.min-z3').style = "border: 1px solid #FFCB13"
+  document.querySelector('.chek2').style = 'display:flex'
+  document.querySelector('.chek3').style = 'display:none'
+  document.querySelector('.chek1').style = 'display:none'
+  document.querySelector('.chek').style = 'display:none'
   document.querySelector('.min-z2').style = "border: none"
   document.querySelector('.min-z1').style = "border: none"
   document.querySelector('.min-z4').style = "border: none"
 }
 
 function cards4() {
-  document.querySelector('.min-z4').style = "border: 1px solid #FFCB13"
+  document.querySelector('.min-z4').style = "border: 2px solid #FFCB13"
+  document.querySelector('.chek3').style = 'display:flex'
+  document.querySelector('.chek').style = 'display:none'
+  document.querySelector('.chek1').style = 'display:none'
+  document.querySelector('.chek2').style = 'display:none'
   document.querySelector('.min-z2').style = "border: none"
   document.querySelector('.min-z3').style = "border: none"
   document.querySelector('.min-z1').style = "border: none"
@@ -79,9 +109,26 @@ function cards4() {
 // }
 
 export default function Home() {
+  const[homiy,setHomiy]= useState([])
+  const[homiy1,setHomiy1]= useState([])
   const [page,setPage] = useState(1)
-  return (
-    <div>
+  
+useEffect(() => {
+  axios.get(`https://dastafka-back.onrender.com/api/homeiy`).then(res=>{
+    setHomiy(res.data)
+    setHomiy1(res.data)
+  })
+}, []);
+function partner(id) {
+  axios.get(`https://dastafka-back.onrender.com/api/homeiy`).then(res=>{
+    const Filter=(item=>res.data==item.id)
+    setHomiy1(Filter)
+  })
+}
+  
+  return ( 
+    <div style={{overflow:"hidden", background: "#F6F6F6"}}>
+      <div className="qora"></div>
       <div className="container">
         <div className="c-h">
         <div className="baner">
@@ -120,29 +167,37 @@ export default function Home() {
               
               <div className="big-z">
               <div onClick={()=> cards1()} className="min-z1">
-                <img src={bet} alt="" />
+              <div className="min-check"><BsCheck className="chek"/></div>
+                <img className='min-bet' src={bet} alt="" />
                 <p>Бетон</p>
               </div>
 
               <div onClick={()=> cards2()} className="min-z2">
-                <img src={cem} alt="" />
+                <div className="min-check"><BsCheck className="chek1"/></div>
+                <img className='min-cem' src={cem} alt="" />
                 <p>Пескобетон</p>
               </div>
 
               <div onClick={()=> cards3()} className="min-z3">
-                <img src={qum} alt="" />
+              <div className="min-check"><BsCheck className="chek2"/></div>
+                <img className='min-qum' src={qum} alt="" />
                 <p>Строительный <br/>раствор</p>
               </div>
 
               <div onClick={()=> cards4()} className="min-z4">
+              <div className="min-check"><BsCheck className="chek3"/></div>
                 <h1>Специальный бетон</h1>
                 <p>Отправим ваш запрос <br />на все заводы</p>
               </div>
               </div>
 
-              <div className="z-rage">
-                <div className="k-rage"></div>
+              <div className="b-rage">
+                <div className="rage-p"><p><span>1</span>/9</p></div>
+                <div className="z-rage">
+                  <div className="k-rage"></div>
+                </div>
               </div>
+
 
               <div className="z-btns">
                 <button className='z-btn1'><a href="#"><BsArrowLeft className='b-i1'/>Назад</a></button>
@@ -151,24 +206,23 @@ export default function Home() {
 
             </div>
           </div>
-
           <div className="h-service">
             <div className="s-left">
-              <div className="l-cards">
+              <div className="l-cards1">
                 <img src={inf} alt="" />
-                <p className='span-p'><span>5 проверенных</span><br /> <span>поставщиков</span> бетона – ваша надежность и уверенность в качестве</p>
+                <p className='span-swiper'><span>5 проверенных</span><br /> <span>поставщиков</span> бетона – ваша надежность и уверенность в качестве</p>
                 <p className='l-big-p'>Сотрудничаем только с ведущими поставщиками бетона, имеющими автоматизированное производство и собственные аттестованные лаборатории для контроля качества. Не работаем с ненадежными заводами, поскольку применение бетона без технологического и лабораторного контроля чревато непредсказуемыми последствиями.</p>
               </div>
 
               <div className="l-cards">
                 <img src={hand} alt="" />
-                <p className='span-p'>Более <span>3500 клиентов</span><br /> уже выбрали нас</p>
+                <p className='span-swiper'>Более <span>3500 клиентов</span><br /> уже выбрали нас</p>
                 <p className='l-big-p'>Именно столько человек уже воспользовались преимуществами нашего сервиса доставки бетона. Постоянное расширение клиентской базы позволяет нам гордиться, что нас выбирает большое количество людей. Мы благодарны за оказываемое доверие и непрерывно развиваемся для того, чтобы выполнять все поставки на самом высоком уровне.</p>
               </div>
 
               <div className="l-cards">
                 <img src={home2} alt="" />
-                <p className='span-p'>Более <span>500 м3 бетона</span> доставляем в день</p>
+                <p className='span-swiper'>Более <span>500 м3 бетона</span> доставляем в день</p>
                 <p className='l-big-p'>Ежедневно доставляем не менее 500 м3 бетона, что служит показателем оптимизации и высокой производительности нашего сервиса.Поэтому, вне зависимости от масштабов реализуемого проекта, вы можете положиться на нас при заказе нужного количества бетона.</p>
               </div>
             </div>
@@ -208,30 +262,48 @@ export default function Home() {
             </div>
 
             <div className="h-part">
-              <div className="part-h1">
-                <h1 className="pa">Наши партнеры</h1>
+              <div className="part-h1"> 
+              <h1 className="pa">Наши партнеры</h1>
+                {homiy.map(item=>{
+                  return(
+                    <img className='homiy-imegs' onClick={()=> partner(item.id)} src={item.image} alt="" />
+                  )
+                })}  
               </div>
-              <div className="part-info">
+                  
+                
+             
+              {homiy.map((item,key)=> {
+                if(key<1)
+return(
+                <div className="part-info">
                 <div className="part-img">
+                {/* <img src={item.image} alt="" /> */}
                   <div className="part-imges">
                     <img className='gg2' src={g2} alt="" />
-                    <div className="star-d"><p>4,8</p><img src={hstar} alt="" /></div>
+                    <div className="star-d"><p>{item.gisstar}</p>{item.gisstar===1?(<><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.gisstar==2?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.gisstar==3?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.gisstar==4?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/></>):(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/></>))))}</div>
                   </div>
-
                   <div className="part-imges">
                     <img className='blogo3' src={blogo3} alt="" />
-                    <div className="star-d"><p>5,0</p><img src={fstar} alt="" /></div>
+                    <div className="star-d"><p>{item.taxistar}</p>{item.taxistar===1?(<><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.taxistar==2?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.taxistar==3?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.taxistar==4?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/></>):(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/></>))))}</div>
                   </div>
                 </div>
 
                 <div className="part-text">
-                    <p className='part-uzun'>С другой стороны постоянный количественный рост и сфера нашей активности требуют от нас анализа соответствующий условий активизации. Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности играет важную роль в формировании форм развития. Равным образом укрепление и развитие структуры представляет </p>
+                    <p className='part-uzun'>{item.description} </p>
                   <div className="s-hesht">
                     <span className="heshteg">#245 заводов</span> <span className="heshteg">#своя аттестованная лаборатория</span> <span className="heshteg">#свой транспорт</span><br />
                     <span className="heshteg">#свои швинги</span>
                   </div>
                 </div>
               </div>
+              )
+              
+              })
+              }
+              
+             
+              
             </div>
         </div>
         </div>
@@ -241,14 +313,14 @@ export default function Home() {
             <div className="mh-left">
               <img src={men} alt="" />
             </div>
-
             <div className="mh-right">
               <h1 className='mr-h1'>Наши приемущества</h1>
               <div className="mh-btn">
-                <button className='btns1'>Для физических лиц</button>
-                <button className='btns2'>Для юридических лиц</button>
+                {/* {page===1?():()} */}
+                <button style={page===1?{background: "#FFCB13", transition: "0.3s ease"}:{background: "#EBEBEB"}} className='btns1' onClick={()=>setPage(1)}>Для физических лиц</button>
+                <button style={page===2?{background: "#FFCB13", transition: "0.3s ease"}:{background: "#EBEBEB"}} className='btns2' onClick={()=>setPage(2)}>Для юридических лиц</button>
               </div>
-              <div className="bir-div">
+              {page===1?( <div className="bir-div">
 
                 <div className="bir-divs">
                   <div className="bir-left">
@@ -279,11 +351,7 @@ export default function Home() {
                     <p className='bir-kic'>У нас вы найдете все, что вам нужно – бетон, строительный раствор, пескобетон. Если вам требуется особый состав, то мы сделаем запрос у наших поставщиков.</p>
                   </div>
                 </div>
-              </div>
-
-              <div className="mh-left">
-              <img className='men2' src={men2} alt="" />
-            </div>
+              </div>):(<>
 
             <div className="iki-div">
               <div className="bir-divs">
@@ -315,7 +383,10 @@ export default function Home() {
                   <p className='bir-kic'>Мы предоставляем вам онлайн доступ к паспортам качества и сертификацию на каждую партию отгруженного бетона. Вы можете быть уверены в качестве поставляемой продукции и иметь все необходимые документы для отчетности в личном кабинете. Если нужны оригиналы документов, то вы можете их заказать.</p>
                 </div>
                 </div>
-              </div>
+              </div></>)}
+             
+
+              
             </div>
           </div>
 
@@ -360,8 +431,22 @@ export default function Home() {
             </div></div>
           </div>
 
+          <div className="main-end">
+            <div className="main-end-p">
+              <p><a href="#">Скачать приложение</a></p>
+            </div>
+
+            <div className="main-e-prog">
+              <img src={ag} alt="" />
+              <img src={ap} alt="" />
+              <img src={ge} alt="" />
+              <img src={go} alt="" />
+              <img src={ru} alt="" />
+              <img src={ag} alt="" />
+            </div>
+          </div>
         </div>
-      </div>
+        </div>
     </div>
   )
 }

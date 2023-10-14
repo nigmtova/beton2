@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.kan-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.kan-header {
+    margin-top: 12%;
+}
+
+.kan-bigp {
+    width: 100%;
+    max-width: 841px;
+    color: #737373;
+    font-family: Montserrat Alternates;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 164%; /* 26.24px */
+    margin-bottom: 3rem;
+}
+
+.kan-h01 {
+    color: #000;
+    font-family: Montserrat Alternates;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 1.5rem;
+}
+
+.kan-content {
+    padding: 1rem;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 700px;
+    border-radius: 41px;
+    background: #FFF;
+}
+
+.kan-bigcard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.kan-cards,.kan-cards2,
+.kan-cards3,.kan-cards4 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 220px;
+    height: 220px;
+    flex-shrink: 0;
+    border-radius: 41px;
+    border: 1px solid #E9E9E9;
+    background: #FFF;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.in {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    color: #737373;
+    font-size: 20px;
+}
+
+.kan-cards,.kan-cards2,
+.kan-cards3,.kan-cards4 {
+    color: #000;
+    text-align: center;
+    font-family: Montserrat Alternates;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.kan-cards,.kan-cards2,
+.kan-cards3,.kan-cards4 img {
+    padding-top: 1rem;
+}
+
+.kc-yellow,.kc-yellow2,
+.kc-yellow3, .kc-yellow4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #FFCB13;
+}
+
+.check, .check2,
+.check3, .check4 {
+    display: none;
+    font-size: 20px;
+}
