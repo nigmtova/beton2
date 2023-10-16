@@ -57,7 +57,7 @@ function newsend1(id) {
           </div>
           </div> 
         </div>
-
+<h1 className="swiper1-h1">Смотри, что у нас нового!</h1>
         <Swiper
         slidesPerView={3}
         spaceBetween={30}
@@ -80,8 +80,8 @@ function newsend1(id) {
         
       </Swiper>
         <div className="news-swiper1">
-          <h1 className="swiper1-h1">Смотри, что у нас нового!</h1> 
-          <div className="swip1-imges">
+           
+          {/* <div className="swip1-imges">
             <div className="swp-left-img">
               <img src="https://beton2.netlify.app/static/media/rasm1.3ebdf068154233ab0b9f.png" alt="" />
               <div className="swiper-text">
@@ -97,7 +97,7 @@ function newsend1(id) {
                 <div className="swp-img-dale"><HiArrowNarrowRight className='swiper-ic'/></div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         </div>
 
