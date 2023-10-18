@@ -26,8 +26,29 @@ function article() {
 export default function News() {
 const[news1,setNews1] = useState ([])
 const[news2,setNews2] = useState ([])
+const[work,setWork] = useState([])
 
+function send() {
+  var newPostData2=new FormData()
+  newPostData2.append("type",3)
+  newPostData2.append("organizatsiya",document.querySelector("#organizatsiya1").value)
+  newPostData2.append("inn",document.querySelector("#inn1").value)
+  newPostData2.append("liso_contact",document.querySelector("#liso_contact1").value)
+  newPostData2.append("phone",document.querySelector("#phone1").value)
+  newPostData2.append("sayt",document.querySelector("#sayt1").value)
+  newPostData2.append("email",document.querySelector("#email1").value)
+  newPostData2.append("mashina",3)
+  newPostData2.append("shving",3)
+
+  axios.post(`https://dastafka-back.onrender.com/api/work`,newPostData2).then(res=>{
+    alert("ishladi")
+  })
+}
 useEffect(() => {
+  axios.get(`https://dastafka-back.onrender.com/api/work`).then(res=>{
+    setWork(res.data)
+  })
+
   axios.get(`https://dastafka-back.onrender.com/api/news`).then(res=>{
     setNews1(res.data)
     setNews2(res.data)
@@ -165,7 +186,30 @@ return(
           </div>
         </div>
       </div>
+<h1>organizatsiya1</h1>
+<input type="text" id='organizatsiya1' />
+<h1>inn1</h1>
+<input type="text" name="" id="inn1" />
+<h1>liso_contact1</h1>
+<input type="number" name="" id="liso_contact1" />
+<h1>phone1</h1>
+<input type="text" id='phone1' />
+<h1>sayt1</h1>
+<input type="text" id='sayt1' />
+<h1>email1</h1>
+<input type="text" id='email1' />
+<button onClick={()=> send()}>send</button>
 
+{work.map(item=>{
+  return(
+    <div style={{marginTop:"40px"}} className="card">
+      <h1>{item.phone}</h1>
+      <h1>{item.email}</h1>
+      <h1>{item.sayt}</h1>
+      <h1>{item.liso_contact}</h1>
+    </div>
+  )
+})}
     </div>
   )
 }
