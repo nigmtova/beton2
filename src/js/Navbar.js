@@ -28,6 +28,10 @@ function cal() {
   window.location="/Kankulyator"
 }
 
+function part() {
+  window.location="/Partners"
+}
+
 function menu() {
   document.querySelector('.media-nav').style = 'position: fixed; right: 0; top: 0;'
   document.querySelector('.media-links a').style = 'display:block;'
@@ -55,7 +59,7 @@ export default function Navbar() {
             <a onClick={()=> news()} href="#" ><HiOutlineNewspaper className='ico'/>Новости</a>
             <a onClick={()=> cal()} href="#" ><BsFillCalculatorFill className='ic'/>Калькуляторы</a>
             <a href="#" ><FaRegHandshake className='ico'/>Партнеры</a>
-            <a href="#" ><PiFilesFill className='ic'/>Стать партнером</a>
+            <a onClick={()=> part()} href="#" ><PiFilesFill className='ic'/>Стать партнером</a>
             <a href="#" ><ImPriceTags className='ic'/>Программа лояльности</a>
             {/* <button className='nav-btn nav-close-btn' onClick={showNavbar}>
               <FaTimes/>
