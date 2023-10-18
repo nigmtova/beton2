@@ -5,6 +5,7 @@ import Navbar from './js/Navbar'
 import Footer from './js/Footer'
 import News from './js/News'
 import Kankulyator from './js/Kankulyator';
+import Partners from './js/Partners';
 
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/News" element={<News />} />
         <Route path="/Kankulyator" element={<Kankulyator />} />
+        <Route path="/Partners" element={<Partners />} />
         {/* <Route path="/Article" element={<Article />} /> */}
         </Routes>
       </BrowserRouter>

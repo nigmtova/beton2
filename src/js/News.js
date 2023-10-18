@@ -27,6 +27,7 @@ export default function News() {
 const[news1,setNews1] = useState ([])
 const[news2,setNews2] = useState ([])
 const[work,setWork] = useState([])
+const[news3,setNews3] = useState ([])
 
 function send() {
   var newPostData2=new FormData()
@@ -159,6 +160,30 @@ return(
           </div>
         </div>
 
+        <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        className="mySwiper"
+      >
+        {news3.map(item=>{
+          return(
+            <SwiperSlide>           <div className="swp-left-img">
+            <img src={item.imege} alt="" />
+
+            <div className="nf-yellow"></div>
+              <div className="swiper-text">
+                <p className='swt-p'>2+1</p>
+                <p className='swt-p1'>Новая акция партии бетона</p>
+                <div className="swp-img-dale"><HiArrowNarrowRight className='swiper-ic'/></div>
+              </div>
+          </div></SwiperSlide>
+          )
+        })}
+        
+      </Swiper>
         <div className="news-footer">
           <div className="nf-header"><img className='startt' src={start} alt="" /><h1 className='nfh-h01'>Наши акции</h1></div>
           <div className="swip1-imges">
