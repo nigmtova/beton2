@@ -3,6 +3,7 @@ import '../css/Partners.css'
 import axios from 'axios'
 import strelka from '../img/strelka.jpeg'
 import betonk from '../img/betonk.jpeg'
+import kamaz from '../img/kamaz.jpeg'
 
 
 export default function Partners() {
@@ -90,10 +91,61 @@ export default function Partners() {
 
           <div className="pm-box">
             <div className="pm-cards">
-            <div className="pmb-min"><p>5</p></div>
+            <div className="pmb-min"><p>01</p></div>
               <p className='pmc-p'>Быть пунктуальным, все делать вовремя.</p>
             </div>
+
+            <div className="pm-cards">
+            <div className="pmb-min"><p>02</p></div>
+              <p className='pmc-p'>Если уметь Быть вежливым</p>
+            </div>
+
+            <div className="pm-cards">
+            <div className="pmb-min"><p>03</p></div>
+              <p className='pmc-p'>БОтдыхать в нерабочее время.</p>
+            </div>
+
+            <div className="pm-cards">
+            <div className="pmb-min"><p>04</p></div>
+              <p className='pmc-p'>Отдыхать в нерабочее время</p>
+            </div>
+
+            <div className="pm-cards">
+            <div className="pmb-min"><p>05</p></div>
+              <p className='pmc-p'>Уметь пользоваться современным телефоном</p>
+            </div>
           </div>
+        </div>
+
+        <div className="part-main-end">
+          <div className="l-part-img">
+            <div className="part-img-three">
+              <div className="part-img-divs"></div>
+                <img className='part-hands' src={kamaz} alt="" />
+              <img className='strelkas' src={strelka} alt="" />
+            </div>
+
+          <div className="lpart-text">
+            <p className='lpart-p'>Если вы полностью соответствуете нашим запросам,</p>
+            <p className='lpart-ho1'>пожалуйста оставьте заявку:</p>
+          </div>
+
+          <div className="part-img-two">
+            <div className="part-img-div"></div>
+            <img className='part-hand' src={kamaz} alt="" />
+            <img className='strelka' src={strelka} alt="" />
+          </div>
+        </div>
+
+        <div className="r-part-input">
+          <input type="text" id='organizatsiya1' placeholder='Наименование организации'/>
+          <input type="text" name="" id="inn1" placeholder='ИНН'/>
+          <input type="number" name="" id="liso_contact1" placeholder='Контактное лицо'/>
+          <input type="text" id='phone1' placeholder='Телефон'/>
+          <input type="text" id='sayt1' placeholder='Сайт'/>
+          <input type="email" id='email1' placeholder='Email'/>
+          <button className='send-btn' onClick={()=> send()}><p>Отправить запрос</p></button>
+        </div>
         </div>
 
       </div>

@@ -131,6 +131,9 @@
 
 .part-main {
     margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .part-box {
@@ -201,6 +204,54 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
+
+.pm-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pm-cards {
+    width: 218px;
+    height: 125px;
+    padding-right: 1rem;
+    margin-left: 1rem;
+    margin-top: 3rem;
+}   
+
+.pmb-min {
+    width: 45px;
+    height: 45px;
+    border-radius: 11px;
+    background: #FFCB13;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.pmb-min p {
+    color: #FFF;
+    font-family: Montserrat Alternates;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.pmc-p {
+    color: #757575;
+    font-family: Montserrat Alternates;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal; 
+}
+
+.part-main-end {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4%;
 }
 
 @media(max-width:1100px) {
