@@ -84,10 +84,25 @@ export default function Kankulyator() {
                 </div>
                 
                 <div className="kan-inputs">
-                    <input className='ki-input' type="number" name="" id="" />
-                    <input className='ki-input' type="number" name="" id="" />
-                    <input className='ki-input' type="number" name="" id="" />
-                    <input className='ki-input' type="number" name="" id="" />
+                    <div className="ki-small">                   
+                        <p>Ширина,м:</p>
+                        <input className='ki-input' type="number" id="number" placeholder='6'/>
+                    </div>
+
+                    <div className="ki-small">
+                        <p>Длина,м:</p>
+                        <input className='ki-input' type="number" id="number" placeholder='8'/>
+                    </div>
+
+                    <div className="ki-small">
+                        <p>Длина,м:</p>
+                        <input className='ki-input' type="number" id="number" placeholder='3'/>
+                    </div>
+
+                    <div className="ki-small">
+                        <p>Марка бетона:</p>
+                        <input className='ki-input' type="text" id="number" placeholder='salom'/>
+                    </div>            
                 </div>
             </div>
         </div>

@@ -121,7 +121,7 @@ useEffect(() => {
 }, []);
 function partner(id) {
   axios.get(`https://dastafka-back.onrender.com/api/homeiy`).then(res=>{
-    const Filter=(item=>res.data==item.id)
+    const Filter=res.data.filter(item=>item.id==id)
     setHomiy1(Filter)
   })
 }
@@ -273,7 +273,7 @@ function partner(id) {
                   
                 
              
-              {homiy.map((item,key)=> {
+              {homiy1.map((item,key)=> {
                 if(key<1)
 return(
                 <div className="part-info">
@@ -281,11 +281,11 @@ return(
                 {/* <img src={item.image} alt="" /> */}
                   <div className="part-imges">
                     <img className='gg2' src={g2} alt="" />
-                    <div className="star-d"><p>{item.gisstar}</p>{item.gisstar===1?(<><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.gisstar==2?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.gisstar==3?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.gisstar==4?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/></>):(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/></>))))}</div>
+                    <div className="star-d"><p>{item.gis_mark}</p>{item.gis_mark===1?(<><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.gis_mark==2?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.gis_mark==3?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.gis_mark==4?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/></>):(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/></>))))}</div>
                   </div>
                   <div className="part-imges">
                     <img className='blogo3' src={blogo3} alt="" />
-                    <div className="star-d"><p>{item.taxistar}</p>{item.taxistar===1?(<><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.taxistar==2?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.taxistar==3?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.taxistar==4?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/></>):(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/></>))))}</div>
+                    <div className="star-d"><p>{item.betomtaxi_mark}</p>{item.betomtaxi_mark===1?(<><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.betomtaxi_mark==2?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.betomtaxi_mark==3?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/><AiFillStar className='black'/></>):(item.betomtaxi_mark==4?(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='black'/></>):(<><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/><AiFillStar className='yellow'/></>))))}</div>
                   </div>
                 </div>
 
