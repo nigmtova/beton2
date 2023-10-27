@@ -4,6 +4,8 @@ import axios from 'axios'
 import strelka from '../img/strelka.jpeg'
 import betonk from '../img/betonk.jpeg'
 import kamaz from '../img/kamaz.jpeg'
+import shiving from '../img/shiving.jpeg'
+import mashina from '../img/mashina.jpeg'
 
 
 export default function Partners() {
@@ -18,8 +20,8 @@ export default function Partners() {
     newPostData2.append("phone",document.querySelector("#phone1").value)
     newPostData2.append("sayt",document.querySelector("#sayt1").value)
     newPostData2.append("email",document.querySelector("#email1").value)
-    newPostData2.append("mashina",3)
-    newPostData2.append("shving",3)
+    newPostData2.append("mashina",document.querySelector("#mashina"))
+    newPostData2.append("shving",document.querySelector("#shving"))
   
     axios.put(`https://dastafka-back.onrender.com/api/work`,newPostData2).then(res=>{
       // alert("ishladi")
@@ -33,6 +35,15 @@ export default function Partners() {
     })
   }, [])
 
+  function Pcycle() {
+    document.querySelector(".min-cycle").style = 'display:flex; transition: 0.3s ease'
+    document.querySelector(".min-cycle1").style = 'display:none'
+  }
+
+  function Pcycle1() {
+    document.querySelector(".min-cycle1").style = 'display:flex; transition: 0.3s ease'
+    document.querySelector(".min-cycle").style = 'display:none'
+  }
 
   return (
     
@@ -87,6 +98,17 @@ export default function Partners() {
             </div>
           </div>
 
+          <div className="part-box2">
+            <div className="pb-right2">
+              <p className="pb-p1">Мы готовы к сотрудничеству с отдельными людьми владеющими миксерами и швингами, так и с компаниями предоставляющие свои услуги в этой сфере.</p>
+            </div>  
+                      
+            <div className="pb-left2">
+              <div className="pb-imh2"></div>
+              <img src={betonk} alt="" />
+            </div>
+          </div>
+
           <p className="pm-p">Для того, чтобы мы расмотрели вашу заявку:</p>
 
           <div className="pm-box">
@@ -138,12 +160,44 @@ export default function Partners() {
         </div>
 
         <div className="r-part-input">
+          <div className="r-parta-cycles">
+            <div onClick={()=> Pcycle()} className="p-cycle">
+              <div className="min-cycle"></div>
+            </div><p>Компания</p>
+
+            <div onClick={()=> Pcycle1()} className="p-cycle1">
+              <div className="min-cycle1"></div>
+            </div>
+            <p>Физ.лицо</p>
+          </div>
           <input type="text" id='organizatsiya1' placeholder='Наименование организации'/>
           <input type="text" name="" id="inn1" placeholder='ИНН'/>
           <input type="number" name="" id="liso_contact1" placeholder='Контактное лицо'/>
           <input type="text" id='phone1' placeholder='Телефон'/>
           <input type="text" id='sayt1' placeholder='Сайт'/>
           <input type="email" id='email1' placeholder='Email'/>
+          <div className="input-end">
+            <p className="inp-end-h1">Ваш транспорт:</p>
+            <div className="part-cars">
+              <p className='p-cars-h1'>Машины:</p>
+              <div className="l-cars">
+                <button className='l-cars-btn' id='mashina'>2,5м3 <img src={mashina} alt="" /></button>
+                <button className='l-cars-btn' id='mashina'>3м3 <img src={mashina} alt="" /></button>
+                <button className='l-cars-btn' id='mashina'>5м3 <img src={mashina} alt="" /></button>
+                <button className='l-cars-btn' id='mashina'>7м3 <img src={mashina} alt="" /></button>
+                <button className='l-cars-btn' id='mashina'>9м3 <img src={mashina} alt="" /></button>
+              </div>
+              <p className='p-cars-h1'>Швинги:</p>
+              <div className="r-cars">
+                <button className='r-cars-btn' id='shving'>15м <img src={shiving} alt="" /></button>
+                <button className='r-cars-btn' id='shving'>21м <img src={shiving} alt="" /></button>
+                <button className='r-cars-btn' id='shving'>30м <img src={shiving} alt="" /></button>
+                <button className='r-cars-btn' id='shving'>40м <img src={shiving} alt="" /></button>
+                <button className='r-cars-btn' id='shving'>57м <img src={shiving} alt="" /></button>
+              </div>
+            </div>
+          </div>
+          
           <button className='send-btn' onClick={()=> send()}><p>Отправить запрос</p></button>
         </div>
         </div>

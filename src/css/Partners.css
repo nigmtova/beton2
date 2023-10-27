@@ -151,6 +151,10 @@
     margin-bottom: 3rem;
 }
 
+.part-box2 {
+    display: none;
+}
+
 .pb-imh {
     position: absolute;
     top: -5rem;
@@ -212,7 +216,8 @@
 }
 
 .pm-cards {
-    width: 218px;
+    width: 100%;
+    max-width: 218px;
     height: 125px;
     padding-right: 1rem;
     margin-left: 1rem;
@@ -254,6 +259,100 @@
     margin-top: 4%;
 }
 
+.r-parta-cycles {
+    display: flex;
+    align-items: center;
+}
+
+.p-cycle, .p-cycle1 {
+    width: 21px;
+    height: 21px;
+    border: 1px solid #FFCB13;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.p-cycle1 {
+    margin-left: 5rem;
+}
+
+.r-parta-cycles p {
+    color: #000;
+    font-family: Montserrat Alternates;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 0.5rem;
+}
+
+.p-cycle .min-cycle, .min-cycle1 {
+    width: 15px;
+    height: 15px;
+    background-color: #FFCB13;
+    border-radius: 50%;
+    display: none;
+}
+
+.inp-end-h1 {
+    color: #000;
+    font-family: Montserrat Alternates;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 0.5rem;
+}
+
+.part-cars .p-cars-h1 {
+    color: #000;
+    font-family: Montserrat Alternates;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 1rem;
+}
+
+.l-cars, .r-cars {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.l-cars-btn, .r-cars-btn{
+    width: 110px;
+    display: flex;
+    padding: 11px 17px 9px 17px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    background: transparent;
+    margin-right: 0.3rem;
+    margin-top: 0.4rem;
+    color: #606060;
+    text-align: center;
+    font-family: Montserrat Alternates;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+@media (max-width:1186px) {
+    .pm-box {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 @media(max-width:1100px) {
     .part-container {
         display: flex;
@@ -268,6 +367,22 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+    }
+
+    .part-main-end {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 10%;
+    }
+
+    .pm-p {
+        font-size: 16px;
+    }
+
+    .pm-h01 {
+        font-size: 35px;
     }
 
     .lpart-ho1 {
@@ -304,11 +419,11 @@
     
     .strelkas { 
         position: absolute;
-        left: 0rem;
-        top: 0;
+        left: 3rem;
+        top: -1rem;
         width: 90px;
         height: 50px;
-        transform: rotate(140deg);
+        transform: rotate(120deg);
         stroke-width: 3px;
     }
 
@@ -324,6 +439,68 @@
 @media (max-width: 750px) {
     .part-header {
         margin-top: 20%;
+    }
+
+    .part-main-end {
+        margin-top: 15%;
+    }
+
+    .pm-box {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 560px) {
+    .part-box2 {
+        text-align: center;
+        overflow: hidden;
+        display: block;
+        width: 70%;
+        max-width: 873px;
+        height: 300px;
+        border-radius: 41px;
+        background: #FFCB13;
+        position: relative;
+    }
+
+    .pb-right2 {
+        text-align: center;
+        color: #000;
+        font-family: Montserrat Alternates;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 153.4%; /* 24.544px */
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .pb-left2 img{
+        position: absolute;
+        bottom: 0;
+        left: 2rem;
+    }
+
+    .pb-imh2 {
+        position: absolute;
+        bottom: -80%;
+        left: -7rem;
+        width: 390px;
+        height: 390px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: #FFF;
+    }
+
+    .part-box {
+        display: none;
+    }
+
+    .pb-p {
+        font-family: Montserrat Alternates,sans-serif;
+        font-weight: 600;
     }
 }
 
